@@ -10,3 +10,8 @@ const user = [
  export const listUser = (req:Request,res:Response) => {
     res.send(user)
 }
+
+export const getUserById = (req:Request,res:Response) => {
+    const {id} = req.params
+    res.send({id: id})
+}
