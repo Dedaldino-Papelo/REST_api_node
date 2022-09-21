@@ -20,3 +20,15 @@ export const createUser = (req:Request,res:Response) => {
     const user = req.body
     res.json({NewUser: user})
 }
+
+export const updateUser = (req:Request,res:Response) => {
+    const {id} = req.params
+    const upadatedUser = req.body
+    upadatedUser.id = id
+    res.status(200).send(upadatedUser)
+}
+
+export const DeleteUser = (req:Request,res:Response) => {
+    const {id} = req.params
+    res.status(200).send("Deleted User")
+}
