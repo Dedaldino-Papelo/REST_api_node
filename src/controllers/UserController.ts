@@ -8,10 +8,15 @@ const user = [
 ]
 
  export const listUser = (req:Request,res:Response) => {
-    res.send(user)
+    res.status(200).send(user)
 }
 
 export const getUserById = (req:Request,res:Response) => {
     const {id} = req.params
-    res.send({id: id})
+    res.status(200).send({id: id})
+}
+
+export const createUser = (req:Request,res:Response) => {
+    const user = req.body
+    res.json({NewUser: user})
 }
